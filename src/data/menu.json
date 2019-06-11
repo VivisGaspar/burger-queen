@@ -1,0 +1,18 @@
+[
+  {
+    "title": "café americano",
+    "price": 5
+  },
+  {
+    "title": "café com leite",
+    "price": 7
+  },
+  {
+    "title": "sanduíche de presunto e queijo",
+    "price": 10
+  },
+  {
+    "title": "suco natural de fruta",
+    "price": 7
+  }
+]

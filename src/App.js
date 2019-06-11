@@ -1,21 +1,45 @@
 import React from 'react';
-// import './App.css';
-import firebase from "./firebaseConfig";
+import firebase from './config/firebaseConfig';
+import Home from './components/Home';
+import Login from './components/Login';
+import 'bootstrap/dist/css/bootstrap.min.css';
+// import Menu from './components/menu';
+import './App.css';
+
+const database = firebase.firestore();
+
+
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      user: {},
+    };
+  }
+
+  componentDidMount() {
+    this.authListener();
+  }
+
+  authListener() {
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        this.setState({ user });
+      } else {
+        this.setState({ user: null });
+      }
+    });
   }
 
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <h1>#testando</h1>
-        </header>
+        {this.state.user ? (<Home />) : (<Login />)}
+        {/* {<Menu />} */}
       </div>
     );
   }
 }
+
 
 export default App;
