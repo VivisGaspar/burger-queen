@@ -7,9 +7,10 @@ const firebaseConfig = {
   projectId: "burger-queen-225a7",
   storageBucket: "burger-queen-225a7.appspot.com",
   messagingSenderId: "396192167304",
-  appId: "1:396192167304:web:08b5f3adb890d63c"
+  appId: "1:396192167304:web:d477d38cf12729d1"
 };
 
 firebase.initializeApp(firebaseConfig);
 
 export default firebase;
+

@@ -1,7 +1,7 @@
 import React from 'react';
 import firebase from './config/firebaseConfig';
-import Home from './components/Home';
-import Login from './components/Login';
+import Home from './components/Home/Home';
+import Login from './components/Login/index';
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import Menu from './components/menu';
 import './App.css';
