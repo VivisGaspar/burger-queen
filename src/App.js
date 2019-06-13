@@ -3,6 +3,7 @@ import firebase from './config/firebaseConfig';
 import Home from './components/Home/Home';
 import Login from './components/Login/index';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Header from './components/Header/index';
 // import Menu from './components/menu';
 import './App.css';
 
@@ -34,6 +35,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+        {/* <Header /> */}
         {this.state.user ? (<Home />) : (<Login />)}
         {/* {<Menu />} */}
       </div>
