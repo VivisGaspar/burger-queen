@@ -1,10 +1,12 @@
 import React from 'react';
 import firebase from './config/firebaseConfig';
 import Home from './components/Home/Home';
-import Login from './components/Login/index';
+import Login from './components/Login/Login';
+import Menu from './components/Menu/index';
+import Cadastro from './components/Login/SignUp';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Header from './components/Header/index';
-// import Menu from './components/menu';
+import { BrowserRouter, Route, Link } from 'react-router-dom';
+// import Header from './components/Header/index';
 import './App.css';
 
 const database = firebase.firestore();
@@ -34,11 +36,14 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
-        {/* <Header /> */}
-        {this.state.user ? (<Home />) : (<Login />)}
-        {/* {<Menu />} */}
-      </div>
+      <BrowserRouter>
+        <div className="sans-serif">
+          {this.state.user ? (<Menu type="app" />) : (<Menu type="login" />)}
+          <Route exact path='/login' component={Login} />
+          <Route exact path='/cadastro' component={Cadastro} />
+          <Route exact path='/home' component={this.state.user ? Home : Login} />
+        </div>
+      </BrowserRouter>
     );
   }
 }

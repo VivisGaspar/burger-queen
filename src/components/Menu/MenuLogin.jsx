@@ -14,9 +14,9 @@ export default () => {
         </ul>
       </main>
       <div className="App">
-        {/* <Route exact path='/' component={Home} /> */}
-        <Route exact path='/Login' component={Login} />
-        <Route exact path='/Cadastro' component={Cadastro} />
+        <Route path='/' exact component={Home} />
+        <Route path='/Login' exact component={Login} />
+        <Route path='/Cadastro' exact component={Cadastro} />
       </div>
     </Router>
   );

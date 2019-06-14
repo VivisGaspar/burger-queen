@@ -31,27 +31,21 @@ class SignUp extends Component {
 
   render() {
     let page = <div className="col-md-6">
-
-      <Menu type="login" />
       <form>
         <div className="form-group">
-          <label htmlFor="name">Nome Completo</label>
-          <input value={this.state.name} onChange={this.handleChange} type="text" name="name" className="form-control" id="name" placeholder="Digite seu nome" />
+          <input value={this.state.name} onChange={this.handleChange} type="text" name="name" className="form-control" id="name" placeholder="Nome completo" />
         </div>
         <div className="form-group">
-          <label htmlFor="Email">Email address</label>
-          <input value={this.state.email} onChange={this.handleChange} type="email" name="email" className="form-control" id="Email" placeholder="Enter email" />
+          <input value={this.state.email} onChange={this.handleChange} type="email" name="email" className="form-control" id="Email" placeholder="E-mail válido" />
         </div>
         <div className="form-group">
-          <label htmlFor="setor">Setor</label>
           <select value={this.state.setor} onChange={this.handleChange} name="setor" className="form-control" id="setor" placeholder="Setor">
             <option value="salão">Salão</option>
             <option value="cozinha">Cozinha</option>
           </select>
         </div>
         <div className="form-group">
-          <label htmlFor="Password">Password</label>
-          <input value={this.state.password} onChange={this.handleChange} type="password" name="password" className="form-control" id="Password" placeholder="Password" />
+          <input value={this.state.password} onChange={this.handleChange} type="password" name="password" className="form-control" id="Password" placeholder="Senha (mínimo 6 dígitos)" />
         </div>
         <button onClick={this.signup} style={{ marginLeft: '25px' }} className="btn btn-success">Cadastrar</button>
       </form >

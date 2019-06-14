@@ -15,7 +15,6 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <Menu type="App" />
         <h1>Você está na Home</h1>
         <button onClick={this.logout}>Logout</button>
       </div>
