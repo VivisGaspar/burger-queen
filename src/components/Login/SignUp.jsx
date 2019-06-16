@@ -20,7 +20,7 @@ class SignUp extends Component {
   }
 
   handleClick = () => {
-    this.props.history.push("/Home");
+    this.props.history.push("/home");
   };
 
   signup(e) {
@@ -34,74 +34,61 @@ class SignUp extends Component {
       .catch(error => {
         alert(error);
       });
-
-    // admin.auth.createUser({
-    //   email: this.state.email,
-    //   sector: 'salão',
-    //   password: this.state.password,
-    //   displayName: 'John Doe',
-    // }).then(function (userRecord) {
-    //   console.log("vaidarcerto", userRecord.uid);
-    // }).catch(function (error) {
-    //   console.log("error");
-    // });
   }
 
   render() {
     let page = (
-      <div className="col-md-6">
-        <form>
-          <div className="form-group">
-            <input
-              value={this.state.name}
-              onChange={this.handleChange}
-              type="text"
-              name="name"
-              className="form-control"
-              id="name"
-              placeholder="Nome completo"
-            />
-          </div>
-          <div className="form-group">
-            <input
-              value={this.state.email}
-              onChange={this.handleChange}
-              type="email"
-              name="email"
-              className="form-control"
-              id="Email"
-              placeholder="E-mail válido"
-            />
-          </div>
-          <div className="form-group">
-            <select
-              value={this.state.setor}
-              onChange={this.handleChange}
-              name="setor"
-              className="form-control"
-              id="setor"
-              placeholder="Setor"
-            >
-              <option value="salão">Salão</option>
-              <option value="cozinha">Cozinha</option>
-            </select>
-          </div>
-          <div className="form-group">
-            <input
-              value={this.state.password}
-              onChange={this.handleChange}
-              type="password"
-              name="password"
-              className="form-control"
-              id="Password"
-              placeholder="Senha (mínimo 6 dígitos)"
-            />
-          </div>
-          <button onClick={this.signup} style={{ marginLeft: "25px" }} className="btn btn-success">
-            Cadastrar
-          </button>
-        </form>
-      </div>
+      <form className="form-wrapper">
+        <div className="form-group">
+          <input
+            value={this.state.name}
+            onChange={this.handleChange}
+            type="text"
+            name="name"
+            className="form-control"
+            id="name"
+            placeholder="Nome completo"
+          />
+        </div>
+        <div className="form-group">
+          <input
+            value={this.state.email}
+            onChange={this.handleChange}
+            type="email"
+            name="email"
+            className="form-control"
+            id="Email"
+            placeholder="E-mail válido"
+          />
+        </div>
+        <div className="form-group">
+          <select
+            value={this.state.setor}
+            onChange={this.handleChange}
+            name="setor"
+            className="form-control"
+            id="setor"
+            placeholder="Setor"
+          >
+            <option value="salão">Salão</option>
+            <option value="cozinha">Cozinha</option>
+          </select>
+        </div>
+        <div className="form-group">
+          <input
+            value={this.state.password}
+            onChange={this.handleChange}
+            type="password"
+            name="password"
+            className="form-control"
+            id="Password"
+            placeholder="Senha (mínimo 6 dígitos)"
+          />
+        </div>
+        <button onClick={this.signup} className="btn btn-primary">
+          Cadastrar
+        </button>
+      </form>
     );
     return page;
   }

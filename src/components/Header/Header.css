@@ -1,0 +1,12 @@
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background-image: url("../../images/header.png");
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  border-bottom: 1px solid var(--second-color);
+  height: 300px;
+  position: relative;
+}

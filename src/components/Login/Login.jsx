@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import firebase from "../../config/firebaseConfig";
-import Menu from "../Menu/index";
 import { withRouter } from "react-router-dom";
 
 class Login extends Component {
@@ -37,35 +36,33 @@ class Login extends Component {
 
   render() {
     let page = (
-      <div className="col-md-6">
-        <form>
-          <div className="form-group">
-            <input
-              value={this.state.email}
-              onChange={this.handleChange}
-              type="email"
-              name="email"
-              className="form-control"
-              id="email"
-              placeholder="E-mail"
-            />
-          </div>
-          <div className="form-group">
-            <input
-              value={this.state.password}
-              onChange={this.handleChange}
-              type="password"
-              name="password"
-              className="form-control"
-              id="password"
-              placeholder="Senha"
-            />
-          </div>
-          <button type="submit" onClick={this.login} className="btn btn-primary">
-            Entrar
-          </button>
-        </form>
-      </div>
+      <form className="form-wrapper">
+        <div className="form-group">
+          <input
+            value={this.state.email}
+            onChange={this.handleChange}
+            type="email"
+            name="email"
+            className="form-control"
+            id="email"
+            placeholder="E-mail"
+          />
+        </div>
+        <div className="form-group">
+          <input
+            value={this.state.password}
+            onChange={this.handleChange}
+            type="password"
+            name="password"
+            className="form-control"
+            id="password"
+            placeholder="Senha"
+          />
+        </div>
+        <button type="submit" onClick={this.login} className="btn btn-primary">
+          Entrar
+        </button>
+      </form>
     );
     return page;
   }

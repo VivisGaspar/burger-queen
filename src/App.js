@@ -1,21 +1,21 @@
-import React from 'react';
-import firebase from './config/firebaseConfig';
-import Home from './components/Home/Home';
-import Login from './components/Login/Login';
-import Menu from './components/Menu/index';
-import Cadastro from './components/Login/SignUp';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter, Route } from 'react-router-dom';
-import './App.css';
+import React from "react";
+import firebase from "./config/firebaseConfig";
+import Home from "./components/Home/Home";
+import Login from "./components/Login/Login";
+import Menu from "./components/Menu/MenuLogin";
+import Cadastro from "./components/Login/SignUp";
+import Header from "./components/Header";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { BrowserRouter, Route } from "react-router-dom";
+import "./App.css";
 
-const database = firebase.firestore();
-
+// const database = firebase.firestore();
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      user: {},
+      user: {}
     };
   }
 
@@ -23,9 +23,8 @@ class App extends React.Component {
     this.authListener();
   }
 
-
   authListener() {
-    firebase.auth().onAuthStateChanged((user) => {
+    firebase.auth().onAuthStateChanged(user => {
       if (user) {
         this.setState({ user });
       } else {
@@ -36,15 +35,18 @@ class App extends React.Component {
 
   render() {
     return (
-      <BrowserRouter>
-        <div className="sans-serif">
-          {this.state.user ? (<Menu type="app" />) : (<Menu type="login" />)}
-          <Route exact path='/' component={this.state.user ? Home : Login} />
-          <Route exact path='/login' component={this.state.user ? Home : Login} />
-          <Route exact path='/cadastro' component={this.state.user ? Home : Cadastro} />
-          <Route exact path='/home' component={this.state.user ? Home : Login} />
-        </div>
-      </BrowserRouter>
+      <React.Fragment>
+        <Header />
+        <BrowserRouter>
+          <div className="container">
+            {this.state.user ? <Menu type="app" /> : <Menu type="login" />}
+            <Route exact path="/" component={this.state.user ? Home : Login} />
+            <Route exact path="/login" component={this.state.user ? Home : Login} />
+            <Route exact path="/cadastro" component={this.state.user ? Home : Cadastro} />
+            <Route exact path="/home" component={this.state.user ? Home : Login} />
+          </div>
+        </BrowserRouter>
+      </React.Fragment>
     );
   }
 }
