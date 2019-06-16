@@ -1,7 +1,6 @@
-import React, { Component } from 'react';
-import firebase from '../../config/firebaseConfig';
-import Menu from '../Menu/index';
-
+import React, { Component } from "react";
+import firebase from "../../config/firebaseConfig";
+import { withRouter } from "react-router-dom";
 
 class SignUp extends Component {
   constructor(props) {
@@ -9,10 +8,10 @@ class SignUp extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.signup = this.signup.bind(this);
     this.state = {
-      name: '',
-      email: '',
-      setor: '',
-      password: ''
+      name: "",
+      email: "",
+      setor: "",
+      password: ""
     };
   }
 
@@ -20,40 +19,92 @@ class SignUp extends Component {
     this.setState({ [e.target.name]: e.target.value });
   }
 
+  handleClick = () => {
+    this.props.history.push("/Home");
+  };
+
   signup(e) {
     e.preventDefault();
-    firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).then((user) => {
-    }).catch((error) => {
-      alert(error);
-    });
+    firebase
+      .auth()
+      .createUserWithEmailAndPassword(this.state.email, this.state.password)
+      .then(user => {
+        this.handleClick();
+      })
+      .catch(error => {
+        alert(error);
+      });
+
+    // admin.auth.createUser({
+    //   email: this.state.email,
+    //   sector: 'salão',
+    //   password: this.state.password,
+    //   displayName: 'John Doe',
+    // }).then(function (userRecord) {
+    //   console.log("vaidarcerto", userRecord.uid);
+    // }).catch(function (error) {
+    //   console.log("error");
+    // });
   }
 
-
   render() {
-    let page = <div className="col-md-6">
-      <form>
-        <div className="form-group">
-          <input value={this.state.name} onChange={this.handleChange} type="text" name="name" className="form-control" id="name" placeholder="Nome completo" />
-        </div>
-        <div className="form-group">
-          <input value={this.state.email} onChange={this.handleChange} type="email" name="email" className="form-control" id="Email" placeholder="E-mail válido" />
-        </div>
-        <div className="form-group">
-          <select value={this.state.setor} onChange={this.handleChange} name="setor" className="form-control" id="setor" placeholder="Setor">
-            <option value="salão">Salão</option>
-            <option value="cozinha">Cozinha</option>
-          </select>
-        </div>
-        <div className="form-group">
-          <input value={this.state.password} onChange={this.handleChange} type="password" name="password" className="form-control" id="Password" placeholder="Senha (mínimo 6 dígitos)" />
-        </div>
-        <button onClick={this.signup} style={{ marginLeft: '25px' }} className="btn btn-success">Cadastrar</button>
-      </form >
-    </div >
-    return page
+    let page = (
+      <div className="col-md-6">
+        <form>
+          <div className="form-group">
+            <input
+              value={this.state.name}
+              onChange={this.handleChange}
+              type="text"
+              name="name"
+              className="form-control"
+              id="name"
+              placeholder="Nome completo"
+            />
+          </div>
+          <div className="form-group">
+            <input
+              value={this.state.email}
+              onChange={this.handleChange}
+              type="email"
+              name="email"
+              className="form-control"
+              id="Email"
+              placeholder="E-mail válido"
+            />
+          </div>
+          <div className="form-group">
+            <select
+              value={this.state.setor}
+              onChange={this.handleChange}
+              name="setor"
+              className="form-control"
+              id="setor"
+              placeholder="Setor"
+            >
+              <option value="salão">Salão</option>
+              <option value="cozinha">Cozinha</option>
+            </select>
+          </div>
+          <div className="form-group">
+            <input
+              value={this.state.password}
+              onChange={this.handleChange}
+              type="password"
+              name="password"
+              className="form-control"
+              id="Password"
+              placeholder="Senha (mínimo 6 dígitos)"
+            />
+          </div>
+          <button onClick={this.signup} style={{ marginLeft: "25px" }} className="btn btn-success">
+            Cadastrar
+          </button>
+        </form>
+      </div>
+    );
+    return page;
   }
 }
 
-export default SignUp;
-
-
+export default withRouter(SignUp);

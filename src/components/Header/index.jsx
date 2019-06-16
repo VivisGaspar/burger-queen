@@ -12,3 +12,4 @@ export default () => {
   );
 }
 
+//este componente não está sendo usado, trata-se de um component para chamar imagem do header e nome da humburgueria

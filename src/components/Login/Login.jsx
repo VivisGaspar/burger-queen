@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
-import firebase from '../../config/firebaseConfig';
-import Menu from '../Menu/index';
-
-
+import React, { Component } from "react";
+import firebase from "../../config/firebaseConfig";
+import Menu from "../Menu/index";
+import { withRouter } from "react-router-dom";
 
 class Login extends Component {
   constructor(props) {
@@ -10,8 +9,8 @@ class Login extends Component {
     this.login = this.login.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.state = {
-      email: '',
-      password: ''
+      email: "",
+      password: ""
     };
   }
 
@@ -19,30 +18,57 @@ class Login extends Component {
     this.setState({ [e.target.name]: e.target.value });
   }
 
+  handleClick = () => {
+    this.props.history.push("/home");
+  };
+
   login(e) {
     e.preventDefault();
-    firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then((user) => {
-    }).catch((error) => {
-      alert(error);
-    });
+    firebase
+      .auth()
+      .signInWithEmailAndPassword(this.state.email, this.state.password)
+      .then(user => {
+        this.handleClick();
+      })
+      .catch(error => {
+        alert(error);
+      });
   }
 
   render() {
-    let page = <div className="col-md-6">
-      <form>
-        <div className="form-group">
-           <input value={this.state.email} onChange={this.handleChange} type="email" name="email" className="form-control" id="email" placeholder="E-mail" /> 
-        </div>
-        <div className="form-group">
-          <input value={this.state.password} onChange={this.handleChange} type="password" name="password" className="form-control" id="password" placeholder="Senha" />
-        </div>
-          <button type="submit" onClick={this.login} className="btn btn-primary">Entrar</button>
-      </form>
-    </div>
-    return page
+    let page = (
+      <div className="col-md-6">
+        <form>
+          <div className="form-group">
+            <input
+              value={this.state.email}
+              onChange={this.handleChange}
+              type="email"
+              name="email"
+              className="form-control"
+              id="email"
+              placeholder="E-mail"
+            />
+          </div>
+          <div className="form-group">
+            <input
+              value={this.state.password}
+              onChange={this.handleChange}
+              type="password"
+              name="password"
+              className="form-control"
+              id="password"
+              placeholder="Senha"
+            />
+          </div>
+          <button type="submit" onClick={this.login} className="btn btn-primary">
+            Entrar
+          </button>
+        </form>
+      </div>
+    );
+    return page;
   }
 }
 
-export default Login;
-
-
+export default withRouter(Login);

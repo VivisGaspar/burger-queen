@@ -5,8 +5,7 @@ import Login from './components/Login/Login';
 import Menu from './components/Menu/index';
 import Cadastro from './components/Login/SignUp';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter, Route, Link } from 'react-router-dom';
-// import Header from './components/Header/index';
+import { BrowserRouter, Route } from 'react-router-dom';
 import './App.css';
 
 const database = firebase.firestore();
@@ -24,6 +23,7 @@ class App extends React.Component {
     this.authListener();
   }
 
+
   authListener() {
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
@@ -39,14 +39,14 @@ class App extends React.Component {
       <BrowserRouter>
         <div className="sans-serif">
           {this.state.user ? (<Menu type="app" />) : (<Menu type="login" />)}
-          <Route exact path='/login' component={Login} />
-          <Route exact path='/cadastro' component={Cadastro} />
+          <Route exact path='/' component={this.state.user ? Home : Login} />
+          <Route exact path='/login' component={this.state.user ? Home : Login} />
+          <Route exact path='/cadastro' component={this.state.user ? Home : Cadastro} />
           <Route exact path='/home' component={this.state.user ? Home : Login} />
         </div>
       </BrowserRouter>
     );
   }
 }
-
 
 export default App;

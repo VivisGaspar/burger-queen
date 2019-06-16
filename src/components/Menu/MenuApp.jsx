@@ -2,6 +2,6 @@ import React from 'react';
 
 export default () => {
   return (
-    <h1>menu app</h1>
+    <h1></h1>
   );
 }
