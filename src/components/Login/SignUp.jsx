@@ -83,6 +83,7 @@ class SignUp extends Component {
             id="setor"
             placeholder="Setor"
           >
+            <option value="setor">Escolha seu setor</option>
             <option value="salao">Salão</option>
             <option value="cozinha">Cozinha</option>
           </select>

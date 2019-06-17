@@ -46,3 +46,8 @@ body {
   width: 100%;
   margin: 20px auto;
 }
+
+.font-text {
+  font-family: "Roboto", sans-serif;
+  color: var(--primary-color);
+}

@@ -36,9 +36,11 @@ class Home extends Component {
     }
     return (
       <div>
-        <h1>Bem vindo(a), {name}</h1>
-        <h2>Você está {setor}</h2>
-        <button onClick={this.logout}>Logout</button>
+        <h1 className="font-text">Bem vindo(a)! {name},</h1>
+        <h2 className="font-text">Você está {setor}</h2>
+        <button onClick={this.logout} className="btn btn-primary">
+          Logout
+        </button>
       </div>
     );
   }

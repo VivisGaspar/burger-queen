@@ -1,9 +1,9 @@
-# Burguer Queen
+# Burger Queen
 
-## Conheça o Burguer Queen
+## Conheça o Burger Queen
 
-Acesse o site: [Burguer Queen]().
-  
+Acesse o site: [Burger Queen]().
+
 ### Índice
 
 1. O Projeto
@@ -24,7 +24,7 @@ Projeto desenvolvido para o bootcamp da Laboratória SP. Consiste em desenvolver
 
 #### Objetivos de aprendizagem
 
-- Objetivo principal construir uma interface web usando React
+- Objetivo principal construir uma interface web usando React.
 
 - Entender e resolver as necessidades dos usuários de forma criativa utilizando conceitos de UX e UI Design.
 
@@ -34,4 +34,35 @@ Projeto desenvolvido para o bootcamp da Laboratória SP. Consiste em desenvolver
 
 #### Considerações gerais
 
-- A lógica do projeto deve ser totalmente implementada em JavaScript (ES6 +), HTML e CSS e empacotada de forma automatizada. Neste projeto será usado React.
+- A lógica do projeto deve ser implementada em JavaScript (ES6 +), HTML e CSS e empacotada de forma automatizada. Neste projeto será usado React.
+
+### 3. Protótipo
+
+O protótipo foi elaborado através da ferramenta Adobe XD e testado por potenciais usuários.
+
+Veja a primeira versão: [Burger Queen](https://youtu.be/3Gom7ZDnlis)
+
+Veja a segunda versão: [Burguer Queen](https://youtu.be/l0a0UGqNM98)
+
+Feedbacks:
+
+- Primeiro protótipo com cores menos atrativas devido novo estilo de design implementados nas atuais hamburguerias
+
+#### Reorganização do protótipo
+
+Sobre o design do segundo protótipo foram escolhodidos cores atrativas e inserido uma logomarca com design moderno.
+
+### 4. Definição do produto
+
+O Burger Queen foi idealizado pensando nos colaboradores de restaurantes e hamburgueirias para que possam realizar pedidos utilizando um tablet e envia-los para o setor da cozinha com maior agilidade para início de preparo de forma mais eficiente.
+O projeto possui uma interface simples de Login e Cadastro e direcionamento para Home a partir do setor selicionado pelo usuário.
+
+Com essas funcionalidades pretende-se otimizar o tempo login de usuário e de anotações de pedidos para envio para a cozinha.
+
+### 5. Implementação
+
+#### Versionamento
+
+Versão atual:
+
+0.0.1 - Permite criar conta (signUp), início da sessão (login), vizualizar home a partir do setor selecionado através da escolha do usuário.
