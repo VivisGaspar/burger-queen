@@ -50,7 +50,9 @@ Feedbacks:
 
 #### Reorganização do protótipo
 
-Sobre o design do segundo protótipo foram escolhodidos cores atrativas e inserido uma logomarca com design moderno.
+Sobre o design do segundo protótipo foram escolhididos cores atrativas e inserido uma logomarca com design moderno.
+
+![Protótipo](https://github.com/VivisGaspar/burger-queen/blob/master/public/images/prototipo_new.png?raw=true)
 
 ### 4. Definição do produto
 
