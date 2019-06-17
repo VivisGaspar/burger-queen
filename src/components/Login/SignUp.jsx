@@ -30,6 +30,19 @@ class SignUp extends Component {
       .createUserWithEmailAndPassword(this.state.email, this.state.password)
       .then(user => {
         this.handleClick();
+        firebase
+          .auth()
+          .currentUser.updateProfile({
+            displayName: this.state.name,
+            photoURL: this.state.setor,
+            setor: this.state.setor
+          })
+          .then(
+            function() {},
+            function(error) {
+              alert("Opa dei erro na atualização do perfil,mas o perfil pode ser atualizado manualmente");
+            }
+          );
       })
       .catch(error => {
         alert(error);
@@ -70,7 +83,7 @@ class SignUp extends Component {
             id="setor"
             placeholder="Setor"
           >
-            <option value="salão">Salão</option>
+            <option value="salao">Salão</option>
             <option value="cozinha">Cozinha</option>
           </select>
         </div>

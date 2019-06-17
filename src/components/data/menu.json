@@ -1,0 +1,60 @@
+// const JSON = {
+// 	"breakFast": [
+//     {
+// 			"title": "café americano",
+// 			"price": 5
+// 		},
+// 		{
+// 			"title": "café com leite",
+// 			"price": 7
+// 		},
+// 		{
+// 			"title": "sanduíche de presunto e queijo",
+// 			"price": 10
+// 		},
+// 		{
+// 			"title": "suco natural de fruta",
+// 			"price": 7
+// 		}
+// 	],
+// 	"hamburgueres": [
+//     {
+// 			"title": "hambúrguer simples",
+// 			"price": 10
+// 		},
+// 		{
+// 			"title": "hambúrguer duplo",
+// 			"price": 15
+// 		}
+// 	],
+// 	"acompanhamentos": [
+//     {
+// 			"title": "batata frita",
+// 			"price": 5
+// 		},
+// 		{
+// 			"title": "anéis de cebola",
+// 			"price": 5
+// 		}
+// 	],
+// 	"bebidas": [
+//     {
+// 			"title": "água 500ml",
+// 			"price": 5
+// 		},
+// 		{
+// 			"title": "água 750ml",
+// 			"price": 7
+// 		},
+// 		{
+// 			"title": "bebida gaseificada 500ml",
+// 			"price": 7
+// 		},
+// 		{
+// 			"title": "bebida gaseificada 750ml",
+// 			"price": 10
+// 		}
+// 	]
+// }
+
+// console.log(JSON.bebidas)
