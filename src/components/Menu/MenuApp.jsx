@@ -1,7 +1,6 @@
-import React from 'react';
+import React from "react";
+import HomeItens from "./components/Menu/HomeItens";
 
 export default () => {
-  return (
-    <h1></h1>
-  );
-}
+  return <HomeItens />;
+};

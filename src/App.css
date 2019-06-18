@@ -50,4 +50,5 @@ body {
 .font-text {
   font-family: "Roboto", sans-serif;
   color: var(--primary-color);
+  font-size: 14px;
 }

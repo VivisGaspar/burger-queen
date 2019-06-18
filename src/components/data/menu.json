@@ -17,7 +17,7 @@
 // 			"price": 7
 // 		}
 // 	],
-// 	"hamburgueres": [
+// 	"burgers": [
 //     {
 // 			"title": "hambúrguer simples",
 // 			"price": 10
@@ -27,7 +27,7 @@
 // 			"price": 15
 // 		}
 // 	],
-// 	"acompanhamentos": [
+// 	"accompaniments": [
 //     {
 // 			"title": "batata frita",
 // 			"price": 5
@@ -37,7 +37,7 @@
 // 			"price": 5
 // 		}
 // 	],
-// 	"bebidas": [
+// 	"drinks": [
 //     {
 // 			"title": "água 500ml",
 // 			"price": 5
