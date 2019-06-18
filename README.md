@@ -44,20 +44,20 @@ Veja a primeira versão: [Burger Queen](https://youtu.be/3Gom7ZDnlis)
 
 Veja a segunda versão: [Burguer Queen](https://youtu.be/l0a0UGqNM98)
 
-Feedbacks:
+Feedback:
 
 - Primeiro protótipo com cores menos atrativas devido novo estilo de design implementados nas atuais hamburguerias
 
 #### Reorganização do protótipo
 
-Sobre o design do segundo protótipo foram escolhididos cores atrativas e inserido uma logomarca com design moderno.
+Sobre o design do segundo protótipo foram escolhidos cores atrativas e inserido uma logomarca com design moderno.
 
 ![Protótipo](https://github.com/VivisGaspar/burger-queen/blob/master/public/images/prototipo_new.png?raw=true)
 
 ### 4. Definição do produto
 
-O Burger Queen foi idealizado pensando nos colaboradores de restaurantes e hamburgueirias para que possam realizar pedidos utilizando um tablet e envia-los para o setor da cozinha com maior agilidade para início de preparo de forma mais eficiente.
-O projeto possui uma interface simples de Login e Cadastro e direcionamento para Home a partir do setor selicionado pelo usuário.
+O Burger Queen foi idealizado pensando nos colaboradores de restaurantes e hamburguerias para que possam realizar pedidos utilizando um tablet e envia-los para o setor da cozinha com maior agilidade para início de preparo de forma mais eficiente.
+O projeto possui uma interface simples de Login e Cadastro e direcionamento para Home a partir do setor selecionado pelo usuário.
 
 Com essas funcionalidades pretende-se otimizar o tempo login de usuário e de anotações de pedidos para envio para a cozinha.
 
@@ -67,4 +67,4 @@ Com essas funcionalidades pretende-se otimizar o tempo login de usuário e de an
 
 Versão atual:
 
-0.0.1 - Permite criar conta (signUp), início da sessão (login), vizualizar home a partir do setor selecionado através da escolha do usuário.
+0.0.1 - Permite criar conta (signUp), início da sessão (login), visualizar home a partir do setor selecionado através da escolha do usuário.
