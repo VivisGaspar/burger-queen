@@ -80,6 +80,27 @@ class HomeItens extends React.Component {
     }
   };
 
+  deleteItem = item => {
+    const itemIndex = this.state.purchase.findIndex(menuItens => {
+      return menuItens.title === item.title;
+    });
+    let newPurchase = this.state.purchase;
+    newPurchase[itemIndex].amount -= 1;
+
+    const amountDelete = newPurchase[itemIndex].amount;
+
+    if (amountDelete > 0) {
+      this.setState({
+        purchase: newPurchase
+      });
+    } else {
+      newPurchase.splice(itemIndex, 1);
+      this.setState({
+        purchase: newPurchase
+      });
+    }
+  };
+
   render() {
     const valueTotal = this.state.purchase.reduce((acc, cur) => {
       return acc + cur.amount * cur.price;
@@ -88,7 +109,7 @@ class HomeItens extends React.Component {
       <div>
         {menuItens.map((menuItens, i) => {
           return (
-            <button Key={i} onClick={() => this.purchaseClick(menuItens)}>
+            <button key={i} onClick={() => this.purchaseClick(menuItens)}>
               {menuItens.title}
             </button>
           );
@@ -97,13 +118,17 @@ class HomeItens extends React.Component {
         <h1>Itens Comprados</h1>
         {this.state.purchase.map((menuItens, i) => {
           return (
-            <p key={i}>
-              {menuItens.title} - {menuItens.price * menuItens.amount} - {menuItens.amount}
-            </p>
+            <div key={i}>
+              <p>
+                {menuItens.title} - {menuItens.price * menuItens.amount} - {menuItens.amount}
+              </p>
+              <button onClick={() => this.deleteItem(menuItens)}>Excluir</button>
+            </div>
           );
         })}
         <hr />
         <h1>Total</h1>
+        <p>Valor total:{valueTotal}</p>
       </div>
     );
   }

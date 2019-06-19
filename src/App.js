@@ -25,6 +25,7 @@ class App extends React.Component {
 
   authListener() {
     firebase.auth().onAuthStateChanged(user => {
+      console.warn("authListener", user);
       if (user) {
         this.setState({ user });
       } else {
@@ -39,7 +40,7 @@ class App extends React.Component {
         <Header />
         <BrowserRouter>
           <div className="container">
-            {this.state.user ? <Menu type="app" /> : <Menu type="login" />}
+            {!this.state.user && <Menu type="login" />}
             <Route exact path="/" component={this.state.user ? Home : Login} />
             <Route exact path="/login" component={this.state.user ? Home : Login} />
             <Route exact path="/cadastro" component={this.state.user ? Home : Cadastro} />
