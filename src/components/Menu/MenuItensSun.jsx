@@ -18,22 +18,6 @@ const menuItens = [
     price: 7
   },
   {
-    title: "hambúrguer simples",
-    price: 10
-  },
-  {
-    title: "hambúrguer duplo",
-    price: 15
-  },
-  {
-    title: "batata frita",
-    price: 5
-  },
-  {
-    title: "anéis de cebola",
-    price: 5
-  },
-  {
     title: "água 500ml",
     price: 5
   },
@@ -51,7 +35,7 @@ const menuItens = [
   }
 ];
 
-class HomeItens extends React.Component {
+class HomeItensSun extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -134,4 +118,4 @@ class HomeItens extends React.Component {
   }
 }
 
-export default HomeItens;
+export default HomeItensSun;

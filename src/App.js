@@ -25,7 +25,6 @@ class App extends React.Component {
 
   authListener() {
     firebase.auth().onAuthStateChanged(user => {
-      console.warn("authListener", user);
       if (user) {
         this.setState({ user });
       } else {
