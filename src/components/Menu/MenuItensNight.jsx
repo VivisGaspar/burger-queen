@@ -1,12 +1,16 @@
 import React from "react";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 const menuItens = [
   {
     title: "hambúrguer simples",
+    additional: "",
     price: 10
   },
   {
     title: "hambúrguer duplo",
+    additional: "",
     price: 15
   },
   {
@@ -32,15 +36,29 @@ const menuItens = [
   {
     title: "bebida gaseificada 750ml",
     price: 10
+  },
+  {
+    title: "adicional queijo",
+    price: 1
+  },
+  {
+    title: "adicional ovo",
+    price: 1
   }
 ];
 
 class HomeItensNight extends React.Component {
   constructor(props) {
     super(props);
+    this.handleChange = this.handleChange.bind(this);
     this.state = {
+      clientName: "",
       purchase: []
     };
+  }
+
+  handleChange(e) {
+    this.setState({ [e.target.name]: e.target.value });
   }
 
   purchaseClick = item => {
@@ -90,30 +108,54 @@ class HomeItensNight extends React.Component {
       return acc + cur.amount * cur.price;
     }, 0);
     return (
-      <div>
-        {menuItens.map((menuItens, i) => {
-          return (
-            <button key={i} onClick={() => this.purchaseClick(menuItens)}>
-              {menuItens.title}
-            </button>
-          );
-        })}
-        <hr />
-        <h1>Itens Comprados</h1>
-        {this.state.purchase.map((menuItens, i) => {
-          return (
-            <div key={i}>
-              <p>
-                {menuItens.title} - {menuItens.price * menuItens.amount} - {menuItens.amount}
-              </p>
-              <button onClick={() => this.deleteItem(menuItens)}>Excluir</button>
+      <React.Fragment>
+        <Row>
+          <Col md="12" lg="12">
+            <div className="form-group">
+              <input
+                value={this.state.clientName}
+                onChange={this.handleChange}
+                type="text"
+                name="clientName"
+                className="form-control"
+                id="clientName"
+                placeholder="Nome do Cliente"
+              />
             </div>
-          );
-        })}
-        <hr />
-        <h1>Total</h1>
-        <p>Valor total:{valueTotal}</p>
-      </div>
+          </Col>
+        </Row>
+
+        <Row>
+          <Col md="6" lg="6">
+            {menuItens.map((menuItens, i) => {
+              return (
+                <div className="btn-itens">
+                  <button className="btn-margin mt-3" key={i} onClick={() => this.purchaseClick(menuItens)}>
+                    {menuItens.title}
+                  </button>
+                </div>
+              );
+            })}
+          </Col>
+          <hr />
+          <Col md="6" lg="6">
+            <h1 className="font-text">Itens Comprados</h1>
+            {this.state.purchase.map((menuItens, i) => {
+              return (
+                <div key={i}>
+                  <p>
+                    {menuItens.title} - {menuItens.price * menuItens.amount} - {menuItens.amount}
+                  </p>
+                  <button onClick={() => this.deleteItem(menuItens)}>Excluir</button>
+                </div>
+              );
+            })}
+            <hr />
+            <h1 className="font-text">Total</h1>
+            <p className="font-text">Valor total:{valueTotal}</p>
+          </Col>
+        </Row>
+      </React.Fragment>
     );
   }
 }

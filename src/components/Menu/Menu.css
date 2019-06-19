@@ -21,6 +21,11 @@ a.nav-link:hover {
 }
 
 .nav-tabs a.nav-link:focus,
+.nav-tabs a.nav-link:active,
 .nav-tabs a.nav-link:hover {
   border-color: var(--main-color);
+}
+
+.btn-itens {
+  display: flex;
 }

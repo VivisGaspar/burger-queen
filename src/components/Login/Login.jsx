@@ -59,7 +59,7 @@ class Login extends Component {
             placeholder="Senha"
           />
         </div>
-        <button type="submit" onClick={this.login} className="btn btn-primary">
+        <button type="submit" onClick={this.login} className="btn btn-padrao">
           Entrar
         </button>
       </form>

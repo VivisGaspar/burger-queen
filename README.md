@@ -68,3 +68,5 @@ Com essas funcionalidades pretende-se otimizar o tempo login de usuário e de an
 Versão atual:
 
 0.0.1 - Permite criar conta (signUp), início da sessão (login), visualizar home a partir do setor selecionado através da escolha do usuário.
+
+0.0.2 - Permite que o usuário escolha o menu conforme o período do dia, adiciona nome no input , ao clicar no item do menu adiciona na lista de pedidos, vizualiza quantidade e valor total.

@@ -9,8 +9,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Route } from "react-router-dom";
 import "./App.css";
 
-// const database = firebase.firestore();
-
 class App extends React.Component {
   constructor(props) {
     super(props);

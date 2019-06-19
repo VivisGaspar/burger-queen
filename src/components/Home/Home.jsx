@@ -38,6 +38,22 @@ class Home extends Component {
   };
 
   render() {
+    let choicePeriod = (
+      <div className="form-group">
+        <select
+          value={this.state.period}
+          onChange={this.handleChange}
+          name="period"
+          className="form-control"
+          id="period"
+          placeholder="period"
+        >
+          <option value="period">Escolha o Período</option>
+          <option value="manha">Manhã</option>
+          <option value="noite">Noite</option>
+        </select>
+      </div>
+    );
     let user = this.getCurrenteUser();
     var name = "";
     var setor = "";
@@ -48,27 +64,16 @@ class Home extends Component {
     return (
       <div>
         <h1 className="font-text">Bem vindo(a)! {name},</h1>
-        <h2 className="font-text">Você está no setor {setor}</h2>
-        <div className="form-group">
-          <select
-            value={this.state.period}
-            onChange={this.handleChange}
-            name="period"
-            className="form-control"
-            id="period"
-            placeholder="period"
-          >
-            <option value="period">Escolha o Período</option>
-            <option value="manha">Manhã</option>
-            <option value="noite">Noite</option>
-          </select>
-        </div>
+        <h2 className="font-text">Você está no setor {setor === "salao" ? "Salão" : "Cozinha"}</h2>
+        {setor === "salao" ? choicePeriod : ""}
         <div>
-          {this.state.period === "manha" ? <MenuItensSun /> : ""}
-          {this.state.period === "noite" ? <MenuItensNight /> : ""}
-          {this.state.period === "period" ? "Você precisa selecionar um período para continuar." : ""}
+          {this.state.period === "manha" && setor === "salao" ? <MenuItensSun /> : ""}
+          {this.state.period === "noite" && setor === "salao" ? <MenuItensNight /> : ""}
+          {this.state.period === "period" && setor === "salao"
+            ? "Você precisa selecionar um período para continuar."
+            : ""}
         </div>
-        <button onClick={this.logout} className="btn btn-primary">
+        <button onClick={this.logout} className="btn btn-padrao">
           Sair
         </button>
       </div>

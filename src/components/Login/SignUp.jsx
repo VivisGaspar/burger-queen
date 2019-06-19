@@ -99,7 +99,7 @@ class SignUp extends Component {
             placeholder="Senha (mínimo 6 dígitos)"
           />
         </div>
-        <button onClick={this.signup} className="btn btn-primary">
+        <button onClick={this.signup} className="btn btn-padrao">
           Cadastrar
         </button>
       </form>
