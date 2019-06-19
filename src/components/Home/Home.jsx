@@ -64,9 +64,9 @@ class Home extends Component {
           </select>
         </div>
         <div>
-          {this.state.perid === "manha" ? <MenuItensSun /> : ""}
-          {this.state.perid === "noite" ? <MenuItensNight /> : ""}
-          {this.state.perid === "period" ? "Você precisa selecionar um período para continuar." : ""}
+          {this.state.period === "manha" ? <MenuItensSun /> : ""}
+          {this.state.period === "noite" ? <MenuItensNight /> : ""}
+          {this.state.period === "period" ? "Você precisa selecionar um período para continuar." : ""}
         </div>
         <button onClick={this.logout} className="btn btn-primary">
           Sair
