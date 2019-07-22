@@ -1,9 +1,5 @@
 # Burger Queen
 
-## Conheça o Burger Queen
-
-Acesse o site: [Burger Queen]().
-
 ### Índice
 
 1. O Projeto
