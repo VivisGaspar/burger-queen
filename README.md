@@ -1,6 +1,6 @@
 # Burger Queen
 
-### Índice
+## Índice
 
 1. O Projeto
 
@@ -13,6 +13,8 @@
 5. Implementação
 
 ### 1. O Projeto
+
+Conheça o projeto [Burger Queen](https://burger-queen-225a7.firebaseapp.com/)
 
 Projeto desenvolvido para o bootcamp da Laboratória SP. Consiste em desenvolver uma aplicação para um pequeno restaurante de hambúrgueres, que está crescendo, que necessita uma interface em que se possa realizar pedidos utilizando um tablet, e enviá-los para a cozinha para que sejam preparados de forma ordenada e eficiente.
 
