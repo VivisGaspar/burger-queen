@@ -33,6 +33,7 @@ body {
   border: 0;
   padding: 10px 30px;
   margin: 0 auto;
+  margin-top: 30px;
 }
 
 .btn-padrao:hover,
@@ -56,5 +57,4 @@ body {
 
 .btn-itens {
   display: flex;
-  justify-items: 
 }

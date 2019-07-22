@@ -4,7 +4,7 @@ import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
 import Menu from "./components/Menu/MenuLogin";
 import Cadastro from "./components/Login/SignUp";
-import Header from "./components/Header";
+import Header from "./components/Header/index";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Route } from "react-router-dom";
 import "./App.css";

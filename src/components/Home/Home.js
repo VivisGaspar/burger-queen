@@ -66,7 +66,7 @@ class Home extends Component {
         <h1 className="font-text">Bem vindo(a)! {name},</h1>
         <h2 className="font-text">Você está no setor {setor === "salao" ? "Salão" : "Cozinha"}</h2>
         {setor === "salao" ? choicePeriod : ""}
-        <div>
+        <div className="font-text">
           {this.state.period === "manha" && setor === "salao" ? <MenuItensSun /> : ""}
           {this.state.period === "noite" && setor === "salao" ? <MenuItensNight /> : ""}
           {this.state.period === "period" && setor === "salao"
